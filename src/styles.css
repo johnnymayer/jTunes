@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family:monospace;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+a {
+    font-size: 1vw;
+    color: rgb(203, 191, 173);
+}
+
+a:hover {
+    color: rgb(187, 150, 0);
+}
+
+#cdr:hover {
+    filter: hue-rotate(70deg);
+}
+
+.card, .card-body {
+    background-color: rgb(70, 70, 70);
+}

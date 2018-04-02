@@ -1,0 +1,15 @@
+<br>
+<h1>
+  BUY THESE TUNES, BRUH.
+</h1>
+<p>PRE-ORDERS AVAILABLE, ALL SALES FINAL.</p>
+
+<h2>Marketplace</h2>
+
+<div *ngFor="let album of albums" (click)="goToDetailPage(album)">
+  <div class="card">
+    <div class="card-body">
+      <h3><em>{{album.title}}</em> by {{album.artist}}</h3>
+    </div>
+  </div>
+</div>

@@ -9,12 +9,20 @@ import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { DonateComponent } from './donate/donate.component';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AboutComponent,
+    MarketplaceComponent,
+    DonateComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,
