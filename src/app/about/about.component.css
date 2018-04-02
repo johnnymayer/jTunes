@@ -1,3 +1,32 @@
 p {
     font-size: 4vw;
 }
+
+.slider {
+    width: 24vw;
+    height: 6vw;
+    background-color: transparent;
+    position: absolute;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 30s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 30s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:transparent; left:800px; top:800px;}
+    25%  {background-color:transparent; left:600px; top:800px;}
+    50%  {background-color:transparent; left:600px; top:600px;}
+    75%  {background-color:green; left:800px; top:600px;}
+    100% {background-color:transparent; left:800px; top:800px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:transparent; left:800px; top:800px;}
+    25%  {background-color:transparent; left:600px; top:800px;}
+    50%  {background-color:transparent; left:600px; top:600px;}
+    75%  {background-color:transparent; left:800px; top:600px;}
+    100% {background-color: transparent; left:800px; top:800px;}
+}
