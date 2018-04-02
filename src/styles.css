@@ -30,5 +30,17 @@ a:hover {
 }
 
 .card, .card-body {
-    background-color: rgb(70, 70, 70);
+    background-color: rgba(103, 103, 103, 0.5);
+    color: white;
+    font-size: 2.5vw;
+}
+
+button {
+    background-image: url('https://i.pinimg.com/originals/a4/94/b6/a494b6794e5e576e41aef264633417af.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 3vw;
+    color: white;
+    text-shadow: 0 0 1vw red;
 }

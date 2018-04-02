@@ -17,6 +17,10 @@ export class AdminComponent implements OnInit {
 
   submitForm(title: string, artist: string, description: string) {
     var newAlbum: Album = new Album(title, artist, description);
-    this.albumService.addAlbum(newAlbum);
+    if (newAlbum.title === "" || newAlbum.artist === "" || newAlbum.description === "") {
+      alert("You have not entered complete data.")
+    } else {
+      this.albumService.addAlbum(newAlbum);
+    }
   }
 }
