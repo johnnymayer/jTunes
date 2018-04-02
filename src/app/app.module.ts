@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
@@ -15,6 +16,7 @@ import { DonateComponent } from './donate/donate.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     routing
