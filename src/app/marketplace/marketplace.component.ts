@@ -1,34 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Album } from '../album.model';
 import { Router } from '@angular/router';
+import { AlbumService } from '../album.service';
+
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
-  styleUrls: ['./marketplace.component.css']
+  styleUrls: ['./marketplace.component.css'],
+  providers: [AlbumService],
+  animations: [
+    trigger('albumState', [
+      state('inactive', style({
+        backgroundColor: 'red',
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        backgroundColor: 'blue',
+        transform: 'scale(1.1)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-in'))
+    ])
+  ]
 })
 
 
-export class MarketplaceComponent {
+export class MarketplaceComponent implements OnInit {
+  
+  albums: Album[];
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private albumService: AlbumService){}
 
-  albums: Album[] = [
-    new Album("Internal Affairs", "Pharoahe Monch",
-      "Strayed from your original plan, you deviated, I alleviated the with long - term goals, Took my underground loot, without the gold.", 1),
-    new Album("Funhouse", "The Stooges",
-      "The second  album from the American rock band, released in 1970 by Elektra Records.", 2),
-    new Album("Twilight of the Thunder God", "Amon Amarth",
-      "Seventh album by the Swedish band, released in 2008, based on Thor's battle with the serpent Jörmungandr.", 3),
-    new Album("3AM in the Mornin'", "DJ Screw",
-      "Sailin da south.", 4),
-    new Album("Dopesmoker", "Sleep",
-      "It's weed metal.", 5),
-    new Album("Axis Bold As Love", "The Jimi Hendrix Experience",
-      "Second studio album by the English-American band, released in 1967.", 6)
-  ];
+  ngOnInit(){
+    this.albums = this.albumService.getAlbums();
+  }
 
   goToDetailPage(clickedAlbum: Album) {
     this.router.navigate(['albums', clickedAlbum.id]);
   }
+
+
 }

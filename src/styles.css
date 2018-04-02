@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { 
+  background: url('http://www.yim778.com/data/out/15/679999.gif') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
     font-family:monospace;
     text-align: center;
@@ -7,12 +15,14 @@ body {
 }
 
 a {
-    font-size: 1vw;
+    font-size: 2vw;
     color: rgb(203, 191, 173);
 }
 
 a:hover {
     color: rgb(187, 150, 0);
+    text-shadow: 0 0 12px cornsilk;
+    text-decoration: none;
 }
 
 #cdr:hover {
