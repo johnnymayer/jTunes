@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { 
-  background: url('https://i.pinimg.com/originals/a4/94/b6/a494b6794e5e576e41aef264633417af.jpg') no-repeat center center fixed; 
+  background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
