@@ -10,6 +10,7 @@ import { HttpModule } from '@angular/http';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
@@ -17,6 +18,11 @@ import { DonateComponent } from './donate/donate.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditAlbumComponent } from './edit-album/edit-album.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { HeaderComponent } from './header/header.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -35,7 +41,9 @@ export const firebaseConfig = {
     DonateComponent,
     AlbumDetailComponent,
     AdminComponent,
-    EditAlbumComponent
+    EditAlbumComponent,
+    AuthComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +51,11 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(firebaseConfig, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
