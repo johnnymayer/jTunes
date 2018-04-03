@@ -1,0 +1,10 @@
+a {
+    font-size: 2vw;
+    color: rgb(203, 191, 173);
+}
+
+a:hover {
+    color: rgb(187, 150, 0);
+    text-shadow: 0 0 12px cornsilk;
+    text-decoration: none;
+}

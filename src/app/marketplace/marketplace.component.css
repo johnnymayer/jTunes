@@ -1,0 +1,8 @@
+li {
+    display: inline-grid;
+    list-style: none;
+}
+
+.card {
+    margin: 12px 12px;
+}
